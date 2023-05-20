@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const List = ({ items }) => {
+const List = ({ items, removeItem }) => {
     return (
         <div className="grocery-list">
             {items.map((item) => {
@@ -10,7 +10,7 @@ const List = ({ items }) => {
                         <p className="title">{title}</p>
                         <div className="btn-container">
                             <button type="button" className="edit-btn">edit</button>
-                            <button type="button" className="delete-btn">delete</button>
+                            <button onClick={() => removeItem(id)} type="button" className="delete-btn">delete</button>
                         </div>
                     </article>
                 );
